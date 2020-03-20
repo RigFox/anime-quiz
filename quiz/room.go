@@ -53,11 +53,7 @@ func GetRoomStatus(r *Room) map[string]interface{} {
 		switch r.RoomState {
 		case RoomStateInit:
 			msg["status"] = RoomStatusOpen
-		case RoomStateReadyToPlay:
-			fallthrough
-		case RoomStatePlayVideo:
-			fallthrough
-		case RoomStatePlayShowAnswer:
+		case RoomStateReadyToPlay, RoomStatePlayVideo, RoomStatePlayShowAnswer:
 			msg["status"] = RoomStatusPlaying
 		case RoomStateFinished:
 			msg["status"] = RoomStatusFinished
